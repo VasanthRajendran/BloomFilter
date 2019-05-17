@@ -1,2 +1,0 @@
-# BloomFilter
-BloomFilter implementation
