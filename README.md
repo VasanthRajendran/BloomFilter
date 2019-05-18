@@ -36,6 +36,7 @@ The get endpoint "/reset" is used to reset/clear the bloom filter.
 Run the below commands in the command line,
 
 1.) mvn clean install
+
 2.) mvn exec:java -Dexec.mainClass="com.example.BloomFilter.BloomFilterApplication"
 
 **Running the Application in IDE (Intellij/Eclipse)**
