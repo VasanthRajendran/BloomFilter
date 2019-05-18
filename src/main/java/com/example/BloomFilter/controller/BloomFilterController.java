@@ -10,8 +10,8 @@ public class BloomFilterController {
     @Autowired
     private BloomFilter bloomFilter;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = "application/json")
-    public void addWord(@RequestBody String word) {
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public void addWord(@RequestParam(value = "input")  String word) {
         if(word == null || word.trim().length() == 0) {
             return;
         }
@@ -19,7 +19,7 @@ public class BloomFilterController {
     }
 
     @RequestMapping(value = "/contains", method = RequestMethod.GET)
-    public boolean containsWord(@RequestParam String word) {
+    public boolean containsWord(@RequestParam(value = "input") String word) {
         if(word == null || word.trim().length() == 0) {
             return false;
         }

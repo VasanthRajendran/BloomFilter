@@ -42,14 +42,10 @@ public class BloomFilterImpl implements BloomFilter {
     @Override
     public boolean contains(String word) {
         try {
-            int hashCodeA = hashFactoryA.generateHash(word);
+            int hashCodeA = Math.abs(hashFactoryA.generateHash(word));
             int hashCodeB = hashFactoryB.generateHash(word);
-            if (bitSet.get(hashFunctionProvider.hashFunction1(hashCodeA)) && bitSet.get(hashFunctionProvider.hashFunction2(hashCodeA))
-            && bitSet.get(hashFunctionProvider.hashFunction1(hashCodeB)) && bitSet.get(hashFunctionProvider.hashFunction2(hashCodeB))) {
-                return true;
-            } else {
-                return false;
-            }
+            return (bitSet.get(hashFunctionProvider.hashFunction1(hashCodeA)) && bitSet.get(hashFunctionProvider.hashFunction2(hashCodeA))
+            && bitSet.get(hashFunctionProvider.hashFunction1(hashCodeB)) && bitSet.get(hashFunctionProvider.hashFunction2(hashCodeB)));
         } catch (Exception e) {
             e.printStackTrace();
         }
