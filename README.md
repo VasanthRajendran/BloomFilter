@@ -13,7 +13,7 @@ The Application is deployed in AWS cloud to test the functionality.
 
 ## Endpoint:
 
-http://boomfiltermicrosoft-env.sjvzhs3fze.us-west-2.elasticbeanstalk.com
+http://Bloomfilter-env.byx6xfxzpq.us-west-2.elasticbeanstalk.com 
 
 **1. add**
 
