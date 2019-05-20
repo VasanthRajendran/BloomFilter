@@ -24,6 +24,10 @@ public class BloomFilterImpl implements BloomFilter {
 
     BitSet bitSet = new BitSet(NUMBER_OF_BITS);
 
+    /* HashCodeA(Java Implementation of Hash) and HashCodeB(MD5 implementation of hash)
+    are passed to the  hashFunction1 and hashFunction2 to generate 4 different values and
+    the bit values are set using those values.
+     */
     @Override
     public void add(String word) {
         try {
@@ -39,6 +43,12 @@ public class BloomFilterImpl implements BloomFilter {
         }
     }
 
+
+    /* HashCodeA(Java Implementation of Hash) and HashCodeB(MD5 implementation of hash)
+    are passed to the  hashFunction1 and hashFunction2 to generate 4 different values and
+    the bit values validated to see if they are already set to true. If yes the word may be
+    present else its not present.
+    */
     @Override
     public boolean contains(String word) {
         try {
@@ -52,6 +62,7 @@ public class BloomFilterImpl implements BloomFilter {
         return false;
     }
 
+    /* Clears all the values of bitset*/
     @Override
     public void clear() {
         bitSet.clear();

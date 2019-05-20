@@ -9,6 +9,7 @@ import java.security.MessageDigest;
 @Component("hashFactoryB")
 public class HashFactoryMD5Impl implements HashFactory {
 
+    /* Generating hashcode based on MD5 algorithm implementation*/
     @Override
     public int generateHash(String password) {
         int hashValue = 0;
